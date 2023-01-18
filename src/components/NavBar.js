@@ -8,10 +8,19 @@ const NavBar = () => {
         <Navbar.Brand>BlissFeed</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link>Home</Nav.Link>
-            <Nav.Link>Sign in</Nav.Link>
-            <Nav.Link>Sign up</Nav.Link>
+          <Nav className="ml-auto text-left">
+            <Nav.Link>
+              <i class="fa-solid fa-house"></i>
+              Home
+            </Nav.Link>
+            <Nav.Link>
+              <i class="fa-solid fa-right-to-bracket"></i>
+              Sign in
+            </Nav.Link>
+            <Nav.Link>
+              <i class="fa-solid fa-user"></i>
+              Sign up
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
