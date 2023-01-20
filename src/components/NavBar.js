@@ -19,7 +19,7 @@ const NavBar = () => {
               activeClassName={styles.Active}
               to="/"
             >
-              <i class="fa-solid fa-house"></i>
+              <i className="fa-solid fa-house"></i>
               Home
             </NavLink>
             <NavLink
@@ -27,7 +27,7 @@ const NavBar = () => {
               activeClassName={styles.Active}
               to="/signin"
             >
-              <i class="fa-solid fa-right-to-bracket"></i>
+              <i className="fa-solid fa-right-to-bracket"></i>
               Sign in
             </NavLink>
             <NavLink
@@ -35,7 +35,7 @@ const NavBar = () => {
               activeClassName={styles.Active}
               to="/signup"
             >
-              <i class="fa-solid fa-user"></i>
+              <i className="fa-solid fa-user"></i>
               Sign up
             </NavLink>
           </Nav>
