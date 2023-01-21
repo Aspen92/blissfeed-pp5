@@ -1,17 +1,17 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import axios from "axios";
-import { axiosRes } from "../api/axiosDefaults";
+import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { useHistory } from "react-router-dom";
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
 
-export const useCurrentUser = () => useContext(CurrentUserContext)
-export const useSetCurrentUser = () => useContext(SetCurrentUserContext)
+export const useCurrentUser = () => useContext(CurrentUserContext);
+export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
 
 export const CurrentUserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const history = useHistory()
+  const history = useHistory();
 
   const handleMount = async () => {
     try {
@@ -24,7 +24,7 @@ export const CurrentUserProvider = ({ children }) => {
 
   useEffect(() => {
     handleMount();
-  }, []); 
+  }, []);
 
   useMemo(() => {
     axiosReq.interceptors.request.use(
