@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useCurrentUser } from "../../context/CurrentUserContext";
 
 const PopularProfiles = ({ mobile }) => {
   const [profileData, setProfileData] = useState({
