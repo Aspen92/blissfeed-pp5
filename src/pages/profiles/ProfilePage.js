@@ -92,7 +92,7 @@ function ProfilePage() {
             !is_owner &&
             (profile?.following_id ? (
               <Button
-                className={`${btnStyles.Button} ${btnStyles.White}`}
+                className={`${btnStyles.Button} ${btnStyles.Red}`}
                 onMouseDown={(event) => event.preventDefault()}
                 onClick={() => handleUnfollow(profile)}
               >
