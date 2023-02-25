@@ -27,6 +27,7 @@ export const MoreDropdown = ({ handleEdit, handleDelete }) => {
       >
         <Dropdown.Item
           className={styles.DropdownItem}
+          onMouseDown={(event) => event.preventDefault()}
           onClick={handleEdit}
           aria-label="edit"
         >
@@ -34,6 +35,7 @@ export const MoreDropdown = ({ handleEdit, handleDelete }) => {
         </Dropdown.Item>
         <Dropdown.Item
           className={styles.DropdownItem}
+          onMouseDown={(event) => event.preventDefault()}
           onClick={handleDelete}
           aria-label="delete"
         >

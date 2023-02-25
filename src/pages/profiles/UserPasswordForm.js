@@ -58,7 +58,7 @@ const UserPasswordForm = () => {
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit}>
             <Form.Group>
-              <Form.Label>New password</Form.Label>
+              <Form.Label className="font-weight-bold">New Password</Form.Label>
               <Form.Control
                 placeholder="new password"
                 type="password"
@@ -73,7 +73,7 @@ const UserPasswordForm = () => {
               </Alert>
             ))}
             <Form.Group>
-              <Form.Label>Confirm password</Form.Label>
+              <Form.Label className="font-weight-bold">Confirm Password</Form.Label>
               <Form.Control
                 placeholder="confirm new password"
                 type="password"
@@ -88,16 +88,16 @@ const UserPasswordForm = () => {
               </Alert>
             ))}
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              className={`${btnStyles.Button} ${btnStyles.Bright}`}
               onClick={() => history.goBack()}
             >
-              cancel
+              Cancel
             </Button>
             <Button
               type="submit"
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              className={`${btnStyles.Button} ${btnStyles.Bright}`}
             >
-              save
+              Save
             </Button>
           </Form>
         </Container>
