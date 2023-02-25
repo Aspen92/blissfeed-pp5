@@ -73,7 +73,7 @@ function PostCreateForm() {
   const textFields = (
     <div className="text-center">
       <Form.Group>
-        <Form.Label>Title</Form.Label>
+        <Form.Label className="font-weight-bold">Title</Form.Label>
         <Form.Control
           type="text"
           name="title"
@@ -88,7 +88,7 @@ function PostCreateForm() {
       ))}
 
       <Form.Group>
-        <Form.Label>Content</Form.Label>
+        <Form.Label className="font-weight-bold">Content</Form.Label>
         <Form.Control
           as="textarea"
           rows={6}
@@ -102,15 +102,14 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
-
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Bright}`}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
+      <Button className={`${btnStyles.Button} ${btnStyles.Bright}`} type="submit">
+        Create
       </Button>
     </div>
   );

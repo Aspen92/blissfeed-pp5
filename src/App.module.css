@@ -1,18 +1,24 @@
 .App {
   font-family: "Roboto", sans-serif;
-  background-color: #f8f8f8;
+  font-weight: 400;
+  color: white;
+  background-color: #212121;
   min-height: 100vh;
 }
 
 .Main {
-  padding-top: 81px;
+  padding-top: 80px;
 }
 
 .Content {
-  background-color: #ffffff;
+  background-color: #323232;
   padding: 10px;
-  border-radius: 2px;
-  border: 1px solid #dadadf;
+  border-radius: 10px;
+  border: 0.5px solid #dadadf;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .FillerImage {
@@ -27,22 +33,28 @@
   object-fit: contain;
 }
 
-* {
-  box-sizing: border-box;
+hr {
+  background-color: #dadadf;
+}
+
+input[type="file"] {
+  display: none;
+  border-style: none;
 }
 
 a {
   font-weight: 700;
-  color: #555555;
+  color: white;
   transition: color ease-in-out 0.3s;
 }
 
 a:hover {
+  color: white;
   text-decoration: none;
 }
 
 a:hover i {
-  color: #000000;
+  color: white;
   transition: color ease-in-out 0.3s;
 }
 

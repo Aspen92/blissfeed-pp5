@@ -35,8 +35,8 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/posts/create"
     >
-      <i className="far fa-plus-square"></i>
-      Add post
+      New Post
+      <i class="fa-solid fa-circle-plus"></i>
     </NavLink>
   );
 
@@ -100,7 +100,9 @@ const NavBar = () => {
     >
       <Container>
         <NavLink to="/">
-          <Navbar.Brand className={styles.NavBarBrand}>BlissFeed</Navbar.Brand>
+          <Navbar.Brand>
+            <h1 className={styles.BrandText}>BlissFeed</h1>
+          </Navbar.Brand>
         </NavLink>
         {currentUser && addPostIcon}
         <Navbar.Toggle
