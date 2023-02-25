@@ -28,16 +28,16 @@
 
 .Button:focus {
   color: black;
-  background-color: #14ffec;
+  background-color: #14ffec !important;
 }
 
 .Bright {
-  background-color: #14ffec;
-  color: black;
+  background-color: #14ffec !important;
+  color: black !important;
 }
 
 .Bright:hover {
-  background-color: #14ffec;
+  background-color: #14ffec !important;
   color: black;
   border-color: transparent;
 }
@@ -48,12 +48,12 @@
 }
 
 .Red {
-  background-color: #ff4242;
+  background-color: #ff4242 !important;
   color: black;
 }
 
 .Red:hover {
-  background-color: #ff4242;
+  background-color: #ff4242 !important;
   color: black;
   border-color: transparent;
 }
