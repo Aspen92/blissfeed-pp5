@@ -108,7 +108,10 @@ function PostCreateForm() {
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Bright}`} type="submit">
+      <Button
+        className={`${btnStyles.Button} ${btnStyles.Bright}`}
+        type="submit"
+      >
         Create
       </Button>
     </div>
@@ -129,7 +132,7 @@ function PostCreateForm() {
                   </figure>
                   <div>
                     <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                      className={`${btnStyles.Button} ${btnStyles.Bright} btn`}
                       htmlFor="image-upload"
                     >
                       Change the image
