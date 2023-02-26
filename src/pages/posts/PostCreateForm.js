@@ -104,12 +104,14 @@ function PostCreateForm() {
       ))}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Bright}`}
+        onMouseDown={(event) => event.preventDefault()}
         onClick={() => history.goBack()}
       >
         Cancel
       </Button>
       <Button
         className={`${btnStyles.Button} ${btnStyles.Bright}`}
+        onMouseDown={(event) => event.preventDefault()}
         type="submit"
       >
         Create
@@ -133,6 +135,7 @@ function PostCreateForm() {
                   <div>
                     <Form.Label
                       className={`${btnStyles.Button} ${btnStyles.Bright} btn`}
+                      onMouseDown={(event) => event.preventDefault()}
                       htmlFor="image-upload"
                     >
                       Change the image
