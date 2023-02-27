@@ -5,7 +5,6 @@ import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
-// import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
 import { Link, useHistory } from "react-router-dom";
@@ -18,6 +17,7 @@ import { useRedirect } from "../../hooks/useRedirect";
 import { setTokenTimestamp } from "../../utils/utils";
 
 function SignInForm() {
+  // Set current user state
   const setCurrentUser = useSetCurrentUser();
   useRedirect("loggedIn");
 
@@ -30,6 +30,7 @@ function SignInForm() {
   const [errors, setErrors] = useState({});
 
   const history = useHistory();
+  // Handle sign in form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -50,8 +51,8 @@ function SignInForm() {
     });
   };
 
+  // Renders the sign-in form component
   return (
-    // <Row className={styles.Row}>
     <Container fluid className={styles.SignInUpContainer}>
       <Col className="my-auto p-0 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
@@ -59,6 +60,7 @@ function SignInForm() {
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
+              {/* Renders a form control component for the username input */}
               <Form.Control
                 type="text"
                 placeholder="Username"
@@ -68,12 +70,13 @@ function SignInForm() {
                 onChange={handleChange}
               />
             </Form.Group>
+            {/* Renders any username errors as alert components */}
             {errors.username?.map((message, idx) => (
               <Alert key={idx} variant="warning">
                 {message}
               </Alert>
             ))}
-
+            {/* Renders a form group for the password input */}
             <Form.Group controlId="password">
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
@@ -85,11 +88,13 @@ function SignInForm() {
                 onChange={handleChange}
               />
             </Form.Group>
+            {/* Renders any password errors as alert components */}
             {errors.password?.map((message, idx) => (
               <Alert key={idx} variant="warning">
                 {message}
               </Alert>
             ))}
+            {/* Renders a sign-in button component */}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
               onMouseDown={(event) => event.preventDefault()}
@@ -97,6 +102,7 @@ function SignInForm() {
             >
               Sign in
             </Button>
+            {/* Renders any non-field errors as alert components */}
             {errors.non_field_errors?.map((message, idx) => (
               <Alert key={idx} variant="warning" className="mt-3">
                 {message}
@@ -104,6 +110,7 @@ function SignInForm() {
             ))}
           </Form>
         </Container>
+        {/* Renders a link to the sign-up page */}
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signup">
             Don't have an account? <span>Sign up now!</span>
@@ -111,7 +118,6 @@ function SignInForm() {
         </Container>
       </Col>
     </Container>
-    // </Row>
   );
 }
 
