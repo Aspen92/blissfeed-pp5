@@ -14,6 +14,7 @@ export const CurrentUserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
 
+  // This function gets the current user data from the backend using the axiosRes object
   const handleMount = async () => {
     try {
       const { data } = await axiosRes.get("dj-rest-auth/user/");
@@ -22,24 +23,27 @@ export const CurrentUserProvider = ({ children }) => {
       // console.log(err);
     }
   };
-
   useEffect(() => {
     handleMount();
   }, []);
 
+  // useMemo hook adds an interceptor to the axiosReq object that checks if the user's token has expired
   useMemo(() => {
     axiosReq.interceptors.request.use(
       async (config) => {
         if (shouldRefreshToken()) {
           try {
+            // Send POST request to the backend to refresh the token
             await axios.post("/dj-rest-auth/token/refresh/");
           } catch (err) {
+            // If the refresh token fails, clear the current user data, redirect to signin page,
             setCurrentUser((prevCurrentUser) => {
               if (prevCurrentUser) {
                 history.push("/signin");
               }
               return null;
             });
+            // Remove the token timestamp
             removeTokenTimestamp();
             return config;
           }
@@ -50,7 +54,8 @@ export const CurrentUserProvider = ({ children }) => {
         return Promise.reject(err);
       }
     );
-
+    // This axiosRes interceptor checks if the response status is 401
+    // Refreshes the token if needed
     axiosRes.interceptors.response.use(
       (response) => response,
       async (err) => {
