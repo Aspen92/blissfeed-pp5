@@ -85,8 +85,9 @@ function PostEditForm() {
 
   const textFields = (
     <div className="text-center">
+      {/* Input field for title */}
       <Form.Group>
-        <Form.Label>Title</Form.Label>
+        <Form.Label className="font-weight-bold">Title</Form.Label>
         <Form.Control
           type="text"
           name="title"
@@ -94,14 +95,15 @@ function PostEditForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {/* Display any errors related to the title input */}
       {errors?.title?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
-
+      {/* Input field for content */}
       <Form.Group>
-        <Form.Label>Content</Form.Label>
+        <Form.Label className="font-weight-bold">Content</Form.Label>
         <Form.Control
           as="textarea"
           rows={6}
@@ -110,20 +112,27 @@ function PostEditForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {/* Display any errors related to the content input */}
       {errors?.content?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
-
+      {/* Cancel button */}
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Bright}`}
+        onMouseDown={(event) => event.preventDefault()}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        save
+      {/* Submit button */}
+      <Button
+        className={`${btnStyles.Button} ${btnStyles.Bright}`}
+        type="submit"
+        onMouseDown={(event) => event.preventDefault()}
+      >
+        Save
       </Button>
     </div>
   );
@@ -135,13 +144,15 @@ function PostEditForm() {
           <Container
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
+            {/* Input field for changing the image */}
             <Form.Group className="text-center">
               <figure>
                 <Image className={appStyles.Image} src={image} rounded />
               </figure>
               <div>
                 <Form.Label
-                  className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                  className={`${btnStyles.Button} ${btnStyles.Bright} btn`}
+                  onMouseDown={(event) => event.preventDefault()}
                   htmlFor="image-upload"
                 >
                   Change the image
@@ -155,6 +166,7 @@ function PostEditForm() {
                 ref={imageInput}
               />
             </Form.Group>
+            {/* Display any errors related to the image input */}
             {errors?.image?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
