@@ -1,8 +1,11 @@
 import { rest } from "msw";
 
+// Define the base URL for the API
 const baseURL = "https://blissfeed-drf-api.herokuapp.com";
 
+// Define an array of request handlers for the API
 export const handlers = [
+  // Define a GET request handler to get the user's data
   rest.get(`${baseURL}dj-rest-auth/user/`, (req, res, ctx) => {
     return res(
       ctx.json({
@@ -17,6 +20,7 @@ export const handlers = [
       })
     );
   }),
+  // Define a POST request handler to sign out the user
   rest.post(`${baseURL}dj-rest-auth/logout/`, (req, res, ctx) => {
     return res(ctx.status(200));
   }),
