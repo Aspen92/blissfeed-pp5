@@ -7,9 +7,6 @@ import styles from "../../styles/CommentCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Button } from "react-bootstrap";
 
-
-
-
 function CommentEditForm(props) {
   const { id, content, setShowEditForm, setComments } = props;
 
@@ -18,10 +15,11 @@ function CommentEditForm(props) {
   const handleChange = (event) => {
     setFormContent(event.target.value);
   };
-
+  // Event handler for submitting edited comment
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      // Send PUT request to update comment in database
       await axiosRes.put(`/comments/${id}/`, {
         content: formContent.trim(),
       });
@@ -37,6 +35,7 @@ function CommentEditForm(props) {
             : comment;
         }),
       }));
+      // Hide edit form
       setShowEditForm(false);
     } catch (err) {
       // console.log(err);
@@ -44,7 +43,9 @@ function CommentEditForm(props) {
   };
 
   return (
+    // Form to edit a comment
     <Form onSubmit={handleSubmit}>
+      {/* Form group for textarea */}
       <Form.Group className="pr-1">
         <Form.Control
           className={styles.Form}
@@ -55,6 +56,7 @@ function CommentEditForm(props) {
         />
       </Form.Group>
       <div className="text-right">
+        {/* Button for canceling */}
         <Button
           className={`${btnStyles.Button} ${btnStyles.Bright}`}
           onClick={() => setShowEditForm(false)}
@@ -63,6 +65,7 @@ function CommentEditForm(props) {
         >
           Cancel
         </Button>
+        {/* Button for submitting */}
         <Button
           className={`${btnStyles.Button} ${btnStyles.Bright}`}
           disabled={!content.trim()}
