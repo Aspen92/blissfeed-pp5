@@ -28,21 +28,24 @@ const Post = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
+  // Event handler for the edit button
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
   };
-
+  // Event handler for the delete button
   const handleDelete = async () => {
     try {
+      // Sending a delete request to the server to delete the post
       await axiosRes.delete(`/posts/${id}/`);
       history.goBack();
     } catch (err) {
       // console.log(err);
     }
   };
-
+  // Event handler for the like button
   const handleLike = async () => {
     try {
+      // Sending a POST request to the server to create a new like for the post
       const { data } = await axiosRes.post("/likes/", { post: id });
       setPosts((prevPosts) => ({
         ...prevPosts,
@@ -56,7 +59,7 @@ const Post = (props) => {
       // console.log(err);
     }
   };
-
+// Event handler for the unlike button, which sends a delete request to the server
   const handleUnlike = async () => {
     try {
       await axiosRes.delete(`/likes/${like_id}/`);
@@ -77,6 +80,7 @@ const Post = (props) => {
     <Card className={styles.Post}>
       <Card.Body>
         <Media className="align-items-center justify-content-between">
+          {/* Link to the profile page of the author of the post */}
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profile_image} height={55} />
             {owner}
@@ -92,7 +96,9 @@ const Post = (props) => {
           </div>
         </Media>
       </Card.Body>
+      {/* Link to the individual post page */}
       <Link to={`/posts/${id}`}>
+        {/* Display the image of the post */}
         <Card.Img src={image} alt={title} />
       </Link>
       <Card.Body>
@@ -122,10 +128,13 @@ const Post = (props) => {
               <i className="far fa-heart" />
             </OverlayTrigger>
           )}
+          {/* Display the number of likes */}
           {likes_count}
           <Link to={`/posts/${id}`}>
+            {/* Display a comments icon */}
             <i className="far fa-comments" />
           </Link>
+          {/* Display the number of comments */}
           {comments_count}
         </div>
       </Card.Body>
