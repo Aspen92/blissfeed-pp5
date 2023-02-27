@@ -19,6 +19,7 @@ import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 import { useCurrentUser } from "../../context/CurrentUserContext";
 
+// PostsPage component that takes in a message and filter prop
 function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -52,8 +53,11 @@ function PostsPage({ message, filter = "" }) {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
+        {/* Show popular profiles on mobile */}
         <PopularProfiles mobile />
+        {/* Show a search icon */}
         <i className={`fas fa-search ${styles.SearchIcon}`} />
+        {/* Create a form with a search bar */}
         <Form
           className={styles.SearchBar}
           onSubmit={(event) => event.preventDefault()}
@@ -66,7 +70,7 @@ function PostsPage({ message, filter = "" }) {
             placeholder="Search posts"
           />
         </Form>
-
+        {/* If data has loaded, show posts or no results message */}
         {hasLoaded ? (
           <>
             {posts.results.length ? (
