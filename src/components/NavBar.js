@@ -19,6 +19,8 @@ const NavBar = () => {
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
+// Handles user sign out functionality
+
   const handleSignOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
@@ -40,6 +42,8 @@ const NavBar = () => {
     </NavLink>
   );
 
+  // Icons visible to signed in users
+
   const loggedInIcons = (
     <>
       <NavLink
@@ -60,7 +64,7 @@ const NavBar = () => {
       </NavLink>
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>
-        Sign Out
+        Sign out
       </NavLink>
       <NavLink
         className={styles.NavLink}
@@ -70,6 +74,9 @@ const NavBar = () => {
       </NavLink>
     </>
   );
+
+  // Icons visible to signed out users
+
   const loggedOutIcons = (
     <>
       <NavLink
@@ -78,7 +85,7 @@ const NavBar = () => {
         to="/signin"
       >
         <i className="fa-solid fa-right-to-bracket"></i>
-        Sign In
+        Sign in
       </NavLink>
       <NavLink
         className={styles.NavLink}
@@ -86,7 +93,7 @@ const NavBar = () => {
         to="/signup"
       >
         <i className="fa-solid fa-user"></i>
-        Sign Up
+        Sign up
       </NavLink>
     </>
   );

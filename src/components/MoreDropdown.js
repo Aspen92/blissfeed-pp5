@@ -3,8 +3,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/MoreDropdown.module.css";
 import { useHistory } from "react-router";
 
-// The forwardRef is important!!
-// Dropdown needs access to the DOM node in order to position the Menu
+// Component that renders three dots, with onClick event handler passed through React.forwardRef.
 const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   <i
     className="fas fa-ellipsis-v"
@@ -16,6 +15,7 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
+// Component that renders a dropdown menu with edit and delete options.
 export const MoreDropdown = ({ handleEdit, handleDelete }) => {
   return (
     <Dropdown className="ml-auto" drop="left">
@@ -46,12 +46,14 @@ export const MoreDropdown = ({ handleEdit, handleDelete }) => {
   );
 };
 
+// Component that renders a dropdown menu for editing profile details.
 export const ProfileEditDropdown = ({ id }) => {
   const history = useHistory();
   return (
     <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
       <Dropdown.Toggle as={ThreeDots} />
       <Dropdown.Menu>
+      {/* Redirect to the edit page for this user's profile */}
         <Dropdown.Item
           onClick={() => history.push(`/profiles/${id}/edit`)}
           onMouseDown={(event) => event.preventDefault()}
@@ -59,6 +61,7 @@ export const ProfileEditDropdown = ({ id }) => {
         >
           <i className="fas fa-edit" /> Edit Profile
         </Dropdown.Item>
+        {/* Redirect to the page for changing the username of this user's profile */}
         <Dropdown.Item
           onClick={() => history.push(`/profiles/${id}/edit/username`)}
           onMouseDown={(event) => event.preventDefault()}
@@ -67,6 +70,7 @@ export const ProfileEditDropdown = ({ id }) => {
           <i className="far fa-id-card" />
           Change Username
         </Dropdown.Item>
+        {/* Redirect to the page for changing the password of this user's profile */}
         <Dropdown.Item
           onClick={() => history.push(`/profiles/${id}/edit/password`)}
           onMouseDown={(event) => event.preventDefault()}

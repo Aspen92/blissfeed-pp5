@@ -49,7 +49,7 @@ const SignUpForm = () => {
     <Container fluid className={styles.SignInUpContainer}>
       <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
-          <h1 className={styles.Header}>Sign Up</h1>
+          <h1 className={styles.Header}>Sign up</h1>
 
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
@@ -108,7 +108,7 @@ const SignUpForm = () => {
               onMouseDown={(event) => event.preventDefault()}
               type="submit"
             >
-              Sign Up
+              Sign up
             </Button>
             {errors.non_field_errors?.map((message, idx) => (
               <Alert key={idx} variant="warning" className="mt-3">
@@ -120,7 +120,7 @@ const SignUpForm = () => {
 
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signin">
-            Already have an account? <span>Sign In</span>
+            Already have an account? <span>Sign in</span>
           </Link>
         </Container>
       </Col>

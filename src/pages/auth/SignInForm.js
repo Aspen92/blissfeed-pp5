@@ -55,7 +55,7 @@ function SignInForm() {
     <Container fluid className={styles.SignInUpContainer}>
       <Col className="my-auto p-0 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
-          <h1 className={styles.Header}>Sign In</h1>
+          <h1 className={styles.Header}>Sign in</h1>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
@@ -95,7 +95,7 @@ function SignInForm() {
               onMouseDown={(event) => event.preventDefault()}
               type="submit"
             >
-              Sign In
+              Sign in
             </Button>
             {errors.non_field_errors?.map((message, idx) => (
               <Alert key={idx} variant="warning" className="mt-3">
@@ -106,7 +106,7 @@ function SignInForm() {
         </Container>
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signup">
-            Don't have an account? <span>Sign Up Now!</span>
+            Don't have an account? <span>Sign up now!</span>
           </Link>
         </Container>
       </Col>
