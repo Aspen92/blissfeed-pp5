@@ -21,6 +21,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
 function PostCreateForm() {
+  // redirect user to login page if logged out
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
@@ -34,6 +35,7 @@ function PostCreateForm() {
   const imageInput = useRef(null);
   const history = useHistory();
 
+  // Function to handle input change
   const handleChange = (event) => {
     setPostData({
       ...postData,
@@ -41,6 +43,7 @@ function PostCreateForm() {
     });
   };
 
+  // Function to handle image change
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
@@ -51,6 +54,7 @@ function PostCreateForm() {
     }
   };
 
+  // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -60,6 +64,7 @@ function PostCreateForm() {
     formData.append("image", imageInput.current.files[0]);
 
     try {
+      // Make request to create post
       const { data } = await axiosReq.post("/posts/", formData);
       history.push(`/posts/${data.id}`);
     } catch (err) {
@@ -72,6 +77,7 @@ function PostCreateForm() {
 
   const textFields = (
     <div className="text-center">
+      {/* Title field */}
       <Form.Group>
         <Form.Label className="font-weight-bold">Title</Form.Label>
         <Form.Control
@@ -81,12 +87,14 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {/* Display errors related to title field */}
       {errors?.title?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
 
+      {/* Content field */}
       <Form.Group>
         <Form.Label className="font-weight-bold">Content</Form.Label>
         <Form.Control
@@ -97,11 +105,13 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {/* Display errors related to content field */}
       {errors?.content?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
+      {/* Cancel button */}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Bright}`}
         onMouseDown={(event) => event.preventDefault()}
@@ -109,6 +119,7 @@ function PostCreateForm() {
       >
         Cancel
       </Button>
+      {/* Submit button */}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Bright}`}
         onMouseDown={(event) => event.preventDefault()}
@@ -126,6 +137,7 @@ function PostCreateForm() {
           <Container
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
+            {/* Image upload section */}
             <Form.Group className="text-center">
               {image ? (
                 <>
@@ -161,6 +173,7 @@ function PostCreateForm() {
                 ref={imageInput}
               />
             </Form.Group>
+            {/* Display errors related to image field */}
             {errors?.image?.map((message, idx) => (
               <Alert variant="warning" key={idx}>
                 {message}
