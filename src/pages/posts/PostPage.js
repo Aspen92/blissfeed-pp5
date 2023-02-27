@@ -18,6 +18,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
 
+// This component renders a post and its comments
 function PostPage() {
   const { id } = useParams();
   const [post, setPost] = useState({ results: [] });
@@ -26,6 +27,7 @@ function PostPage() {
   const profile_image = currentUser?.profile_image;
   const [comments, setComments] = useState({ results: [] });
 
+  // Fetches the post and its comments from the API and updates the state
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -46,10 +48,12 @@ function PostPage() {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
+        {/* Show popular profiles on mobile */}
         <PopularProfiles mobile />
 
         <Post {...post.results[0]} setPosts={setPost} postPage />
         <Container className={appStyles.Content}>
+          {/* If current user, show the create comment form */}
           {currentUser ? (
             <CommentCreateForm
               profile_id={currentUser.profile_id}
@@ -58,7 +62,8 @@ function PostPage() {
               setPost={setPost}
               setComments={setComments}
             />
-          ) : comments.results.length ? (
+          ) : 
+          comments.results.length ? (
             "Comments"
           ) : null}
           {comments.results.length ? (
