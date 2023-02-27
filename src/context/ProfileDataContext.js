@@ -11,19 +11,20 @@ export const useSetProfileData = () => useContext(SetProfileDataContext);
 
 export const ProfileDataProvider = ({ children }) => {
   const [profileData, setProfileData] = useState({
-    // we will use the pageProfile later!
     pageProfile: { results: [] },
     popularProfiles: { results: [] },
   });
 
+  // Get the current user data
   const currentUser = useCurrentUser();
 
   const handleFollow = async (clickedProfile) => {
     try {
+      // Send a POST request to the backend to follow the clicked profile
       const { data } = await axiosRes.post("/followers/", {
         followed: clickedProfile.id,
       });
-
+      // Update the profile data with the newly followed profile
       setProfileData((prevState) => ({
         ...prevState,
         pageProfile: {
@@ -42,7 +43,7 @@ export const ProfileDataProvider = ({ children }) => {
       // console.log(err);
     }
   };
-
+  // This function handles the unfollowing action of a user's clicked profile
   const handleUnfollow = async (clickedProfile) => {
     try {
       await axiosRes.delete(`/followers/${clickedProfile.following_id}/`);
