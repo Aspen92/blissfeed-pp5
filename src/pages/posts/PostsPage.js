@@ -25,12 +25,11 @@ function PostsPage({ message, filter = "" }) {
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   const [query, setQuery] = useState("");
 
   const currentUser = useCurrentUser();
-
 
   //Fetch categories
   useEffect(() => {
@@ -45,13 +44,14 @@ function PostsPage({ message, filter = "" }) {
     };
 
     fetchCategories();
-  }, [])
-
+  }, []);
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const { data } = await axiosReq.get(`/posts/?${filter}search=${query}&category=${selectedCategory}`);
+        const { data } = await axiosReq.get(
+          `/posts/?${filter}search=${query}&category=${selectedCategory}`
+        );
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
@@ -70,8 +70,7 @@ function PostsPage({ message, filter = "" }) {
 
   const handleChange = (e) => {
     console.log(e.target.value);
-    setSelectedCategory(e.target.value)
-
+    setSelectedCategory(e.target.value);
   };
 
   return (
@@ -93,19 +92,20 @@ function PostsPage({ message, filter = "" }) {
             className="mr-sm-2"
             placeholder="Search posts"
           />
-          <Form.Control
-            aria-label="Default select example"
-            as="select"
-            onChange={(e) => handleChange(e)}
-          >
-            <option value="">Filter by Category</option>
-            {categories.results?.map((x) => (
-              <option key={x.id} value={x.id}>
-                {x.name}
-              </option>
-            ))}
-          </Form.Control>
         </Form>
+        <Form.Control
+          className={styles.CategoriesDropdown}
+          aria-label="Default select example"
+          as="select"
+          onChange={(e) => handleChange(e)}
+        >
+          <option value="">All Categories</option>
+          {categories.results?.map((x) => (
+            <option key={x.id} value={x.id}>
+              {x.name}
+            </option>
+          ))}
+        </Form.Control>
         {/* If data has loaded, show posts or no results message */}
         {hasLoaded ? (
           <>
