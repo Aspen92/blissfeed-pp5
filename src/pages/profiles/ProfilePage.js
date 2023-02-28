@@ -41,6 +41,7 @@ function ProfilePage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // Fetching data for profile and profile posts using axios requests
         const [{ data: pageProfile }, { data: profilePosts }] =
           await Promise.all([
             axiosReq.get(`/profiles/${id}/`),
@@ -61,9 +62,11 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
+    {/* If the profile belongs to the current user, show a dropdown menu for editing */}
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row noGutters className="px-3 text-center">
         <Col lg={3} className="text-lg-left">
+          {/* Display the user's profile image */}
           <Image
             className={styles.ProfileImage}
             roundedCircle
@@ -71,23 +74,28 @@ function ProfilePage() {
           />
         </Col>
         <Col lg={6}>
+          {/* Display the user's name */}
           <h3 className="m-2 font-weight-bold">{profile?.owner}</h3>
           <Row className="justify-content-center no-gutters">
             <Col xs={3} className="my-2">
+              {/* Display the number of posts the user has */}
               <div>{profile?.posts_count}</div>
               <div>Posts</div>
             </Col>
             <Col xs={3} className="my-2">
+              {/* Display the number of followers the user has */}
               <div>{profile?.followers_count}</div>
               <div>Followers</div>
             </Col>
             <Col xs={3} className="my-2">
+              {/* Display the number of users the user is following */}
               <div>{profile?.following_count}</div>
               <div>Following</div>
             </Col>
           </Row>
         </Col>
         <Col lg={3} className="text-lg-right">
+          {/* If the user is logged in and not the owner of the profile, show a follow/unfollow button */}
           {currentUser &&
             !is_owner &&
             (profile?.following_id ? (
@@ -108,6 +116,7 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
+        {/* If the user has a profile content, display it */}
         {profile?.content && <Col className="p-3">{profile.content}</Col>}
       </Row>
     </>
@@ -116,6 +125,7 @@ function ProfilePage() {
   const mainProfilePosts = (
     <>
       <hr />
+      {/* If the user has posted, display an infinite scroll of their posts */}
       {profilePosts.results.length ? (
         <InfiniteScroll
           children={profilePosts.results.map((post) => (
@@ -127,6 +137,7 @@ function ProfilePage() {
           next={() => fetchMoreData(profilePosts, setProfilePosts)}
         />
       ) : (
+        // If the user has not posted, display a message ''No Results''
         <Asset
           src={NoResults}
           message={`No results found, ${profile?.owner} hasn't posted yet.`}
@@ -138,6 +149,7 @@ function ProfilePage() {
   return (
     <Row>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
+        {/* Display a list of popular profiles */}
         <PopularProfiles mobile />
         <Container className={appStyles.Content}>
           {hasLoaded ? (
