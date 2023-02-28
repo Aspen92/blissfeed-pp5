@@ -24,10 +24,33 @@ function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
+  const [categories, setCategories] = useState([
+    { id: 1, name: "Category 1" },
+    { id: 2, name: "Category 2" },
+    { id: 3, name: "Category 3" },
+  ]);
+  const [selectedCategory, setSelectedCategory] = useState();
 
   const [query, setQuery] = useState("");
 
   const currentUser = useCurrentUser();
+
+
+  //Fetch categories
+  // useEffect(() => {
+  //   const fetchCategories = async () => {
+  //     try {
+  //       const { data } = await axiosReq.get(`/categories`);
+  //       setCategories(data);
+  //       setHasLoaded(true);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+
+  //   fetchCategories();
+  // }, [])
+
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -50,6 +73,12 @@ function PostsPage({ message, filter = "" }) {
     };
   }, [filter, query, pathname, currentUser]);
 
+  const handleChange = (e) => {
+    console.log(e.target.value);
+    setSelectedCategory(+e.target.value)
+
+  };
+
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
@@ -57,7 +86,7 @@ function PostsPage({ message, filter = "" }) {
         <PopularProfiles mobile />
         {/* Show a search icon */}
         <i className={`fas fa-search ${styles.SearchIcon}`} />
-        {/* Create a form with a search bar */}
+        {/* Form with a search bar */}
         <Form
           className={styles.SearchBar}
           onSubmit={(event) => event.preventDefault()}
@@ -69,6 +98,18 @@ function PostsPage({ message, filter = "" }) {
             className="mr-sm-2"
             placeholder="Search posts"
           />
+          <Form.Control
+            aria-label="Default select example"
+            as="select"
+            onChange={(e) => handleChange(e)}
+          >
+            <option>Filter by Category</option>
+            {categories.map((x) => (
+              <option key={x.id} value={x.id}>
+                {x.name}
+              </option>
+            ))}
+          </Form.Control>
         </Form>
         {/* If data has loaded, show posts or no results message */}
         {hasLoaded ? (
