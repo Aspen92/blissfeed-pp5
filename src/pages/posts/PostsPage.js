@@ -24,12 +24,8 @@ function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
-  const [categories, setCategories] = useState([
-    { id: 1, name: "Category 1" },
-    { id: 2, name: "Category 2" },
-    { id: 3, name: "Category 3" },
-  ]);
-  const [selectedCategory, setSelectedCategory] = useState();
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   const [query, setQuery] = useState("");
 
@@ -37,25 +33,25 @@ function PostsPage({ message, filter = "" }) {
 
 
   //Fetch categories
-  // useEffect(() => {
-  //   const fetchCategories = async () => {
-  //     try {
-  //       const { data } = await axiosReq.get(`/categories`);
-  //       setCategories(data);
-  //       setHasLoaded(true);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const { data } = await axiosReq.get(`/categories`);
+        setCategories(data);
+        // setHasLoaded(true);
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
-  //   fetchCategories();
-  // }, [])
+    fetchCategories();
+  }, [])
 
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
+        const { data } = await axiosReq.get(`/posts/?${filter}search=${query}&category=${selectedCategory}`);
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
@@ -67,15 +63,14 @@ function PostsPage({ message, filter = "" }) {
     const timer = setTimeout(() => {
       fetchPosts();
     }, 1000);
-
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, pathname, currentUser]);
+  }, [filter, query, pathname, currentUser, selectedCategory]);
 
   const handleChange = (e) => {
     console.log(e.target.value);
-    setSelectedCategory(+e.target.value)
+    setSelectedCategory(e.target.value)
 
   };
 
@@ -103,8 +98,8 @@ function PostsPage({ message, filter = "" }) {
             as="select"
             onChange={(e) => handleChange(e)}
           >
-            <option>Filter by Category</option>
-            {categories.map((x) => (
+            <option value="">Filter by Category</option>
+            {categories.results?.map((x) => (
               <option key={x.id} value={x.id}>
                 {x.name}
               </option>

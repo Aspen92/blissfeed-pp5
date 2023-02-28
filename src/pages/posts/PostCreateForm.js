@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -21,9 +21,11 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
 function PostCreateForm() {
-  // redirect user to login page if logged out
+  // Redirect user to login page if logged out
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   const [postData, setPostData] = useState({
     title: "",
@@ -43,6 +45,21 @@ function PostCreateForm() {
     });
   };
 
+  //Fetch categories
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const { data } = await axiosReq.get(`/categories`);
+        setCategories(data);
+        // setHasLoaded(true);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchCategories();
+  }, []);
+
   // Function to handle image change
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
@@ -54,12 +71,17 @@ function PostCreateForm() {
     }
   };
 
+  const handleCategoryChange = (e) => {
+    setSelectedCategory(e.target.value);
+  };
+
   // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
 
     formData.append("title", title);
+    formData.append("category", selectedCategory);
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
 
@@ -93,6 +115,19 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
+
+      <Form.Control
+        aria-label="Default select example"
+        as="select"
+        onChange={(e) => handleCategoryChange(e)}
+      >
+        <option value="">Filter by Category</option>
+        {categories.results?.map((x) => (
+          <option key={x.id} value={x.category}>
+            {x.name}
+          </option>
+        ))}
+      </Form.Control>
 
       {/* Content field */}
       <Form.Group>
