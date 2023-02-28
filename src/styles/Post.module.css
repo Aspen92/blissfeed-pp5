@@ -1,3 +1,4 @@
+/* Post styling */
 .Post {
   background-color: #323232;
   color: white;
@@ -12,10 +13,12 @@ h5 {
   margin: 0 0;
 }
 
+/* Like/heart button styling */
 .Heart {
   color: #ff4524;
 }
 
+/* Like/heart button hover effect */
 .Heart:hover {
   color: white;
 }

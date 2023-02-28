@@ -1,3 +1,4 @@
+/* Main button styling */
 .Button {
   font-size: 0.9rem;
   font-weight: bold;
@@ -10,59 +11,70 @@
   min-width: 75px;
 }
 
+/* Main button hover effect */
 .Button:hover {
   opacity: 0.7;
   border-color: transparent;
   cursor: pointer;
 }
 
+/* Main button hover effect */
 .Button:hover:active {
   color: black;
   background-color: #14ffec !important;
 }
 
+/* Main button active effect */
 .Button:active {
   color: black;
   background-color: #14ffec !important;
 }
 
+/* Main button focus effect */
 .Button:focus {
   color: black;
   background-color: #14ffec !important;
 }
 
+/* Bright/turkos button through out the page styling */
 .Bright {
   background-color: #14ffec !important;
   color: black !important;
 }
 
+/* Bright/turkos button through out the page hover effect */
 .Bright:hover {
   background-color: #14ffec !important;
   color: black;
   border-color: transparent;
 }
 
+/* Bright/turkos button through out the page focus effect */
 .Bright:focus {
   background-color: #0d7377 !important;
   color: black !important;
 }
 
+/* Red button(Unfollow buttons etc) through out the page styling */
 .Red {
   background-color: #ff4242 !important;
   color: black;
 }
 
+/* Red button(Unfollow buttons etc) through out the page hover effect */
 .Red:hover {
   background-color: #ff4242 !important;
   color: black;
   border-color: transparent;
 }
 
+/* Red button(Unfollow buttons etc) through out the page focus effect */
 .Red:focus {
   background-color: #ff4242 !important;
   color: black;
 }
 
+/* Wide button class for sign in page etc */
 .Wide {
   padding: 10px 50px;
   width: 100%;

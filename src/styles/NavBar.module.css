@@ -1,20 +1,24 @@
+/* Navbar styling  */
 .NavBar {
   background-color: #323232;
   box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
 }
 
+/* Brand text styling */
 .BrandText {
   color: white;
   font-size: 2rem;
   font-weight: bold;
 }
 
+/* Navlinks styling */
 .NavLink {
   padding: 5px;
   font-size: 1.2rem;
   color: white;
 }
 
+/* Icons styling when active */
 .Active i {
   color: white;
 }

@@ -1,9 +1,11 @@
+/* Sign in and sign up styling */
 .SignInUpContainer {
   display: flex;
   height: calc(80vh - 81px);
   justify-content: center;
 }
 
+/* Styling for the inputs through out the page */
 .Input {
   background: #ffffff;
   border: 1px solid #f0f1f9;
