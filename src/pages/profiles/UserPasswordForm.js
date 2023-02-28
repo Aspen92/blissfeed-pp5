@@ -57,6 +57,7 @@ const UserPasswordForm = () => {
       <Col className="py-2 mx-auto text-center" md={6}>
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit}>
+            {/* New password form */}
             <Form.Group>
               <Form.Label className="font-weight-bold">New Password</Form.Label>
               <Form.Control
@@ -67,11 +68,13 @@ const UserPasswordForm = () => {
                 name="new_password1"
               />
             </Form.Group>
+            {/* Error message relating to the new password form */}
             {errors?.new_password1?.map((message, idx) => (
               <Alert key={idx} variant="warning">
                 {message}
               </Alert>
             ))}
+            {/* Confirm password form */}
             <Form.Group>
               <Form.Label className="font-weight-bold">Confirm Password</Form.Label>
               <Form.Control
@@ -82,17 +85,20 @@ const UserPasswordForm = () => {
                 name="new_password2"
               />
             </Form.Group>
+            {/* Error message relating to the confirm password form */}
             {errors?.new_password2?.map((message, idx) => (
               <Alert key={idx} variant="warning">
                 {message}
               </Alert>
             ))}
+            {/* Cancel button that brings the user to the previous page */}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Bright}`}
               onClick={() => history.goBack()}
             >
               Cancel
             </Button>
+            {/* Save button that submits the new data */}
             <Button
               type="submit"
               className={`${btnStyles.Button} ${btnStyles.Bright}`}

@@ -56,8 +56,10 @@ const UsernameForm = () => {
     <Row>
       <Col className="py-2 mx-auto text-center" md={6}>
         <Container className={appStyles.Content}>
+          {/* Change username form */}
           <Form onSubmit={handleSubmit} className="my-2">
             <Form.Group>
+              {/* Form label */}
               <Form.Label className="font-weight-bold">Change Username</Form.Label>
               <Form.Control
                 placeholder="username"
@@ -66,17 +68,20 @@ const UsernameForm = () => {
                 onChange={(event) => setUsername(event.target.value)}
               />
             </Form.Group>
+            {/* Error message relating to change username form */}
             {errors?.username?.map((message, idx) => (
               <Alert key={idx} variant="warning">
                 {message}
               </Alert>
             ))}
+            {/* Cancel button that brings the user to the previous page */}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Bright}`}
               onClick={() => history.goBack()}
             >
               Cancel
             </Button>
+            {/* Save button that submits the new data */}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Bright}`}
               type="submit"
