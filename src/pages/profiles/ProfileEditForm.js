@@ -85,6 +85,7 @@ const ProfileEditForm = () => {
 
   const textFields = (
     <>
+    {/* A textarea with a label for entering a bio */}
       <Form.Group>
         <Form.Label className="font-weight-bold">Bio</Form.Label>
         <Form.Control
@@ -95,12 +96,13 @@ const ProfileEditForm = () => {
           rows={7}
         />
       </Form.Group>
-
+      {/* Error messages related to the bio field */}
       {errors?.content?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
+      {/* A cancel button that navigates to the previous page */}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Bright}`}
         onMouseDown={(event) => event.preventDefault()}
@@ -108,6 +110,7 @@ const ProfileEditForm = () => {
       >
         Cancel
       </Button>
+      {/* A submit button that triggers the Form's onSubmit handler */}
       <Button 
         className={`${btnStyles.Button} ${btnStyles.Bright}`}
         onMouseDown={(event) => event.preventDefault()}
@@ -123,11 +126,13 @@ const ProfileEditForm = () => {
         <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
           <Container className={appStyles.Content}>
             <Form.Group>
+              {/* Image preview if an image has been selected */}
               {image && (
                 <figure>
                   <Image src={image} fluid />
                 </figure>
               )}
+              {/* Error messages related to the image upload */}
               {errors?.image?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                   {message}
@@ -155,6 +160,7 @@ const ProfileEditForm = () => {
                 }}
               />
             </Form.Group>
+            {/* Text fields */}
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
