@@ -78,8 +78,12 @@ On this project I used GitHub to create an Kanban agile project management tool 
 - Add a way for users to message eachother.
 - Add function for uploading videos.
 - Make a light version of the application and make users have the choice of choosing between light or dark mode.
+- Implement more testing for the application.
+- Improve performance of the application.
 
 # API
+
+The API is built specifically for this frontend application with the Django REST Framework. The repository for the backend can be found [here](https://github.com/Aspen92/blissfeed-drf-api).
 
 # Technologies
 
@@ -93,29 +97,29 @@ On this project I used GitHub to create an Kanban agile project management tool 
 ## Programs, libraries, frameworks and dependencies
 
 - [Gitpod](https://gitpod.io)
-  - Gitpod
+  - Gitpod as the main IDE.
 - [Git](https://git-scm.com/)
-  - Git
+  - Git for version control.
 - [GitHub](https://github.com/)
-  - GitHub
-- [React]()
-  - React
+  - GitHub to store the project.
+- [React](https://reactjs.org/)
+  - React as a JavaScript library for building the user interface.
 - [Axios](https://axios-http.com/docs/intro)
-  - Axios
+  - Axios to make HTTP requests and handle the responses efficiently.
 - [React Router](https://v5.reactrouter.com/web/guides/quick-start)
-  - React Router
+  - React Router for routing and navigation in this React application, allowing me to create declarative, dynamic routes with components for different pages and URLs.
 - [JWT](https://jwt.io/)
-  - JWT
-- [React-Bootstrap]()
-  - React-Bootstrap
-- [Heroku]()
-  - Heroku
+  - JWT (JSON Web Tokens) was used for authentication and authorization of the web application.
+- [React-Bootstrap](https://react-bootstrap.github.io/)
+  - React-Bootstrap React-Bootstrap for styling and responsiveness.
+- [Heroku](https://id.heroku.com/login)
+  - Heroku to host both of the frontend and backend applications.
 - [Google Fonts](https://fonts.google.com/)
-  - Google fonts
-- [Font Awesome]()
-  - Font Awesome
+  - Google fonts for importing Roboto font.
+- [Font Awesome](https://fontawesome.com/)
+  - Font Awesome for icons.
 - [ui.dev](https://ui.dev/amiresponsive) 
-    -
+    -Ui.dev to test the responsiveness of the application.
 
 # Testing
 
@@ -127,7 +131,7 @@ The W3C Markup Validator, W3C CSS Validator Services and ESLint were used to val
 
 ### Lighthouse
 
-![Lighthouse]()
+BILD
 
 ## Testing of implemented User Stories from User Experience (UX) section
 
@@ -145,18 +149,77 @@ The W3C Markup Validator, W3C CSS Validator Services and ESLint were used to val
 
 ## Bugs
 
+- A bug related to categories in PostsPage.js - When entering the web application the "NoResults.png" was the first to show up. This was due to setHasLoaded was set to true. Here is the code with setHasLoaded commented out -
+
+```  //Fetch categories
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const { data } = await axiosReq.get(`/categories`);
+        setCategories(data);
+        // setHasLoaded(true);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchCategories();
+  }, []);
+```
+
 # Deployment
 
 ## Development
 
-## Deployment
+1.  Clone [this repository](https://github.com/Aspen92/blissfeed-pp5).
+2.  Open your IDE and connect to your repo, then enter this command in the terminal:
+
+        npm install
+
+- Make sure your package.json dependencies look like this:
+
+      "dependencies": {
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "^11.2.7",
+        "@testing-library/user-event": "^13.5.0",
+        "axios": "^0.27.2",
+        "bootstrap": "^4.6.0",
+        "jwt-decode": "^3.1.2",
+        "react": "^17.0.2",
+        "react-bootstrap": "^1.6.3",
+        "react-dom": "^17.0.2",
+        "react-infinite-scroll-component": "^6.1.0",
+        "react-router-dom": "^5.3.0",
+        "react-scripts": "5.0.1",
+        "web-vitals": "^2.1.4"
+      },
+
+3.  Git add, commit and push all changes to your repo.
+4.  Create or log in to an account on Heroku.
+5.  Create a new app on Heroku.
+6.  In the Deploy section on Heroku, go to Deployment method and add your GitHub repository.
+7.  Go down to Manual deploy and select deploy branch for early deployment.
+8.  To run your app locally, enter this command in your terminal:
+
+            npm run dev
 
 # Credits
 
 ## Code
 
-## Content 
+The React code for my BlissFeed project heavily relies on Code Institute's Moments walkthrough React project, which I found to have all the necessary features. However, I have incorporated my own custom styles and functionalities, such as a filtering system for categories, to meet the specific requirements of my project.
+
+## Content
+
+The structure and layout of this README was based on this [template](https://github.com/Code-Institute-Solutions/SampleREADME) by Code Institute.
 
 ## Media
 
+Default profile image and default post image are from Code Institute walkthrough project 'Moments'.
+
 ## Acknowledgements
+
+- My best friend Lucas Holm for continuous helpful feedback and support.
+- Code Institute tutors for help with various issues, especially Sean and Oisin.
+- Stack Overflow for problem solving.
+- Code Institute Slack channels and my fellow students for asking good question and giving good answers.
