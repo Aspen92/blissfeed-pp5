@@ -1,6 +1,18 @@
-# BlissFeed -  [Live link]()
+# BlissFeed -  [Live link](https://blissfeed-pp5.herokuapp.com/)
+
+Welcome to **BlissFeed**, the social media app designed to help you share your life and spread positivity to others. Whether you're looking to connect with friends, family, or like-minded individuals, **BlissFeed** offers a platform for you to create an account, post pictures and text, and engage with others in a fun and positive way. With full CRUD functionality, you can easily manage your content and connect with others on your terms.
+
+The frontend application is connected to the **BlissFeed API**, a custom-built backend application built with Django REST framework and designed specifically for the **BlissFeed** application. You can find the repository for the API [here](https://github.com/Aspen92/blissfeed-drf-api).
 
 # Project Goals
+
+The objective of this project was to construct a website application that facilitates positive image sharing while providing essential functionalities to visitors. The website encompasses the following features:
+
+- Basic authentication and authorization functionality.
+- Intuitive navigation system for easy browsing.
+- Full CRUD functionality that enables users to create, read, update and - delete posts, comments, and likes.
+- Filter options that allow visitors to sort through posts, categories, and search for specific titles and authors.
+- Capability to modify profile information such as bio text and images.
 
 # User Experience
 
