@@ -68,12 +68,14 @@ The objective of this project was to construct a website application that facili
 ## _Sprint #2_
 
 ### Post categories
-
 - As a user I can access a dropdown menu with different categories that is linked to posts so that I can filter what posts I'm seeing based on categories.
 
 ## _Spring #3_
 
+### Messages
 - As a user I can access a form to message other users so that I can stay in contact with my followers och people I'm following.
+
+### Upload Videos
 - As a user I can access a form where I'm able to upload videos so that I can share more content with my followers.
 
 # Design
@@ -184,15 +186,87 @@ BILD
 
 ## Testing of implemented User Stories from User Experience (UX) section
 
-### 1.
 
-### 2.
+### Navigating the site
 
-### 3.
+- As a user I can access the navbar from all pages so that I can navigate between pages.
+   - Works as intended.
+- As a user I can view a list of the most popular profiles on desktop and mobile so that I can be easy access the most popular profiles.
+   - Works as intended.
 
-### 4.
+### User authentication
 
-### 5.
+- As a user I can access a sign up page where I can create my own account so that I get all the features of the site.
+   - Works as intended.
+- As a user I can view a page where I can sign in to get access to my profile so that I can get all the benefits for a signed in user.
+   - Works as intended.
+
+### Create posts
+
+- As a signed in user I can create posts so that I can share my pictures and thoughts to other users.
+   - Works as intended.
+
+### Like posts
+
+- As a signed in user I can like or remove likes on posts so that I can show support to different users/users content or correct a unwanted like on posts.
+   - Works as intended.
+
+### Post list page
+
+- As a user I can view the latest posts uploaded to the website in descending order so that every time I visit the website I get the latest content.
+   - Works as intended.
+- As a signed in user I can access my feed page that shows a filtered view of content from users I'm following so that I can easier find only the content of the specific profiles I'm following.
+   - Works as intended.
+- As a user I can search for content on the site by keywords so that I can find the content I want to engage in.
+   - Works as intended.
+
+### Post detail page
+
+- As a user I can access a more detailed view of every post so that I can interact with the specific post in more detail.
+   - Works as intended.
+- As a user I can delete my own posts so that I have full control of what content I want to have on my profile.
+   - Works as intended.
+- As a signed in user I can edit my own posts so that I can fix typos or update the content.
+   - Works as intended.
+- As a signed in user I can add comments to posts so that I can engage in the conversation on specific posts.
+   - Works as intended.
+- As a user I can read comments on posts so that I can engage and see what people are talking about on that specific post.
+   - Works as intended.
+- As a user I can delete my own comments on posts so that I can have full control of my comments.
+   - Works as intended.
+- As a user I can edit my own comments that i've made on a post so that I can fix any typos or just update my existing comment.
+   - Works as intended.
+- As a user I can see when a comment was made so that I know how old/relevant the comment is.
+   - Works as intended.
+
+### Profile page
+
+- As a user I can add my own and see other users avatars so that I can easier identify specific users.
+   - Works as intended.
+- As a signed in user I can edit and update my profile - profile picture and bio so that I can have my profile up to date.
+   - Works as intended.
+- As a user I can view different profile pages so that I can access their profile information and content.
+   - Works as intended.
+- As a signed in user I can follow or unfollow profiles so that I can follow a specific profile to see it's content or vice versa.
+   - Works as intended.
+- As a signed in user I can change my username and password so that I can change my displayed name and change my password for convenience.
+   - Works as intended.
+- As a user I can view profile information of a specific user, like number of posts/followers and following count so that I can see detailed information of a specific profile.
+   - Works as intended.
+- As a user I can access all the posts of a specific profile so that I can view their latest content.
+   - Works as intended.
+
+### Post categories
+- As a user I can access a dropdown menu with different categories that is linked to posts so that I can filter what posts I'm seeing based on categories.
+   - Works as intended but could be improved with more categories and styling of the dropdown menu.
+
+### Messages
+- As a user I can access a form to message other users so that I can stay in contact with my followers och people I'm following.
+   - Not implemented yet.
+
+### Upload Videos
+- As a user I can access a form where I'm able to upload videos so that I can share more content with my followers.
+   - Not implemented yet.
 
 ## Manual Testing
 
