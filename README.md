@@ -1,4 +1,4 @@
-# BlissFeed -  [Live link](https://blissfeed-pp5.herokuapp.com/)
+# BlissFeed - [Live link](https://blissfeed-pp5.herokuapp.com/)
 
 Welcome to **BlissFeed**, the social media app designed to help you share your life and spread positivity to others. Whether you're looking to connect with friends, family, or like-minded individuals, **BlissFeed** offers a platform for you to create an account, post pictures and text, and engage with others in a fun and positive way. With full CRUD functionality, you can easily manage your content and connect with others on your terms.
 
@@ -18,35 +18,68 @@ The objective of this project was to construct a website application that facili
 
 # User Stories
 
-
 ## _Sprint #1_
 
 ### Navigating the site
-- 
+
+- As a user I can access the navbar from all pages so that I can navigate between pages.
+- As a user I can view a list of the most popular profiles on desktop and mobile so that I can be easy access the most popular profiles.
 
 ### User authentication
-- 
 
-### Posting and liking posts
-- 
+- As a user I can access a sign up page where I can create my own account so that I get all the features of the site.
+- As a user I can view a page where I can sign in to get access to my profile so that I can get all the benefits for a signed in user.
+
+### Create posts
+
+- As a signed in user I can create posts so that I can share my pictures and thoughts to other users.
+
+### Like posts
+
+- As a signed in user I can like or remove likes on posts so that I can show support to different users/users content or correct a unwanted like on posts.
 
 ### Post list page
-- 
+
+- As a user I can view the latest posts uploaded to the website in descending order so that every time I visit the website I get the latest content.
+- As a signed in user I can access my feed page that shows a filtered view of content from users I'm following so that I can easier find only the content of the specific profiles I'm following.
+- As a user I can search for content on the site by keywords so that I can find the content I want to engage in.
 
 ### Post detail page
-- 
+
+- As a user I can access a more detailed view of every post so that I can interact with the specific post in more detail.
+- As a user I can delete my own posts so that I have full control of what content I want to have on my profile.
+- As a signed in user I can edit my own posts so that I can fix typos or update the content.
+- As a signed in user I can add comments to posts so that I can engage in the conversation on specific posts.
+- As a user I can read comments on posts so that I can engage and see what people are talking about on that specific post.
+- As a user I can delete my own comments on posts so that I can have full control of my comments.
+- As a user I can edit my own comments that i've made on a post so that I can fix any typos or just update my existing comment.
+- As a user I can see when a comment was made so that I know how old/relevant the comment is.
 
 ### Profile page
-- 
 
-## _Sprint #2_ 
+- As a user I can add my own and see other users avatars so that I can easier identify specific users.
+- As a signed in user I can edit and update my profile - profile picture and bio so that I can have my profile up to date.
+- As a user I can view different profile pages so that I can access their profile information and content.
+- As a signed in user I can follow or unfollow profiles so that I can follow a specific profile to see it's content or vice versa.
+- As a signed in user I can change my username and password so that I can change my displayed name and change my password for convenience.
+- As a user I can view profile information of a specific user, like number of posts/followers and following count so that I can see detailed information of a specific profile.
+- As a user I can access all the posts of a specific profile so that I can view their latest content.
 
-### Categorising posts
-- 
+## _Sprint #2_
+
+### Post categories
+
+- As a user I can access a dropdown menu with different categories that is linked to posts so that I can filter what posts I'm seeing based on categories.
+
+## _Spring #3_
+
+- As a user I can access a form to message other users so that I can stay in contact with my followers och people I'm following.
+- As a user I can access a form where I'm able to upload videos so that I can share more content with my followers.
 
 # Design
 
 ## Color Scheme
+
 BILD
 
 - I used a dark charcoal grey color (#212121) for the background to create a sleek and modern look for the page.
@@ -134,8 +167,8 @@ The API is built specifically for this frontend application with the Django REST
   - Google fonts for importing Roboto font.
 - [Font Awesome](https://fontawesome.com/)
   - Font Awesome for icons.
-- [ui.dev](https://ui.dev/amiresponsive) 
-    -Ui.dev to test the responsiveness of the application.
+- [ui.dev](https://ui.dev/amiresponsive)
+  -Ui.dev to test the responsiveness of the application.
 
 # Testing
 
@@ -165,29 +198,29 @@ BILD
 
 ### **Navigation**
 
-| Test               | Action                                       | Expected Result                                                                                                                   | Pass |
-| ------------------ | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ---- |
-| Site logo          | Click logo                                   | Take the user to the home page.                                                                                                   | ✓    |
-| Sign in navbar      | Click "Sign in" link                          | Take the user to the sign in page.                                                                                                 | ✓    |
-| Sign in page        | Click "Sign in" button                        | If user signs in, redirect to home.                                                                                                | ✓    |
-| Sign in page        | Click "Sign up" link                         | Take the user to the sign up page.                                                                                                | ✓    |
-| Sign up navbar     | Click "Sign up" link                         | Take the user to the sign up page.                                                                                                | ✓    |
-| Sign up page       | Click "Sign up" button                       | If user signs up, redirect to sign in page.                                                                                        | ✓    |
-| Sign up page       | Click "Sign in" link                          | Take the user to the sign in page.                                                                                                 | ✓    |
-| Sign up/sign in     | Enter URL for sign up/sign in while logged in | Redirects user to home page.                                                                                                      | ✓    |
-| Sign out navbar     | Click "Sign out" link                         | Sign out user and redirect to home page.                                                                                           | ✓    |
-| Create post navbar | Click "New post +" link                           | When signed in, takes the user to the create post page.                                                                           | ✓    |
-| Create post page   | Click "Create" button                        | If user creates post, redirect to this post.                                                                                      | ✓    |
-| Post "Feed" navbar | Click "Feed" link                            | Render list of posts from users the user is following.                                                                            | ✓    |
-| Post "Liked"       | Click "Liked" link                           | Render list of posts the user has liked.                                                                                          | ✓    |
-| Profile navbar     | Click profile image or name                  | Take user to user's profile page                                                                                                  | ✓    |
-| Profile site-wide  | Click profile image or name                  | Take user to the clicked user's profile page.                                                                                     | ✓    |
-| Edit post          | Click edit icon in dropdown                  | Take user to edit post page.                                                                                                      | ✓    |
-| Edit post page     | Click "Save" button                          | Take user to newly edited post.                                                                                                   | ✓    |
-| Edit post page     | Click "Cancel" button                        | Take user back to the post.                                                                                                       | ✓    |
-| Delete post        | Click delete icon in dropdown                | Delete post and take user to previous page.                                                                                       | ✓    |
-| Infinite scroll    | Scrolling to end of page                     | Render new posts and/or comments if there's more than 10 of any.                                                                  | ✓    |
-| Unauthorized       | Visit page unauthorized                      | Reaching a create, edit or delete page through URL manipulation to content the user is not authorized for, redirect to home page. | ✓    |
+| Test               | Action                                        | Expected Result                                                                                                                   | Pass |
+| ------------------ | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ---- |
+| Site logo          | Click logo                                    | Take the user to the home page.                                                                                                   | ✓    |
+| Sign in navbar     | Click "Sign in" link                          | Take the user to the sign in page.                                                                                                | ✓    |
+| Sign in page       | Click "Sign in" button                        | If user signs in, redirect to home.                                                                                               | ✓    |
+| Sign in page       | Click "Sign up" link                          | Take the user to the sign up page.                                                                                                | ✓    |
+| Sign up navbar     | Click "Sign up" link                          | Take the user to the sign up page.                                                                                                | ✓    |
+| Sign up page       | Click "Sign up" button                        | If user signs up, redirect to sign in page.                                                                                       | ✓    |
+| Sign up page       | Click "Sign in" link                          | Take the user to the sign in page.                                                                                                | ✓    |
+| Sign up/sign in    | Enter URL for sign up/sign in while logged in | Redirects user to home page.                                                                                                      | ✓    |
+| Sign out navbar    | Click "Sign out" link                         | Sign out user and redirect to home page.                                                                                          | ✓    |
+| Create post navbar | Click "New post +" link                       | When signed in, takes the user to the create post page.                                                                           | ✓    |
+| Create post page   | Click "Create" button                         | If user creates post, redirect to this post.                                                                                      | ✓    |
+| Post "Feed" navbar | Click "Feed" link                             | Render list of posts from users the user is following.                                                                            | ✓    |
+| Post "Liked"       | Click "Liked" link                            | Render list of posts the user has liked.                                                                                          | ✓    |
+| Profile navbar     | Click profile image or name                   | Take user to user's profile page                                                                                                  | ✓    |
+| Profile site-wide  | Click profile image or name                   | Take user to the clicked user's profile page.                                                                                     | ✓    |
+| Edit post          | Click edit icon in dropdown                   | Take user to edit post page.                                                                                                      | ✓    |
+| Edit post page     | Click "Save" button                           | Take user to newly edited post.                                                                                                   | ✓    |
+| Edit post page     | Click "Cancel" button                         | Take user back to the post.                                                                                                       | ✓    |
+| Delete post        | Click delete icon in dropdown                 | Delete post and take user to previous page.                                                                                       | ✓    |
+| Infinite scroll    | Scrolling to end of page                      | Render new posts and/or comments if there's more than 10 of any.                                                                  | ✓    |
+| Unauthorized       | Visit page unauthorized                       | Reaching a create, edit or delete page through URL manipulation to content the user is not authorized for, redirect to home page. | ✓    |
 
 <br/><br/>
 
@@ -208,11 +241,11 @@ BILD
 
 | Test        | Action               | Expected Result                                                                                                                         | Pass |
 | ----------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---- |
-| Sign up     | Form valid           | If the form is valid, user is redirected to sign in page.                                                                                | ✓    |
+| Sign up     | Form valid           | If the form is valid, user is redirected to sign in page.                                                                               | ✓    |
 | Sign up     | Form invalid         | If the form is NOT valid, i.e required field not filled, wrong password format or duplicate username the user is notified of the error. | ✓    |
-| Sign in      | Form valid           | If the form is valid, user is redirected to home page.                                                                                  | ✓    |
-| Sign in      | Form invalid         | If the form is NOT valid, i.e required field not filled or wrong password, the user is notified of the error.                           | ✓    |
-| Sign out     | Sign out          | If the user signs out, the navbar reflects the change and functions reserved for signed in users are not displayed.                      | ✓    |
+| Sign in     | Form valid           | If the form is valid, user is redirected to home page.                                                                                  | ✓    |
+| Sign in     | Form invalid         | If the form is NOT valid, i.e required field not filled or wrong password, the user is notified of the error.                           | ✓    |
+| Sign out    | Sign out             | If the user signs out, the navbar reflects the change and functions reserved for signed in users are not displayed.                     | ✓    |
 | Create post | Create form valid    | If the form is valid, user is redirected to the newly created post.                                                                     | ✓    |
 | Create post | Create form invalid  | If the form is NOT valid, i.e required field not filled or title already exist the user is notified of the error.                       | ✓    |
 | Edit post   | Edit form valid      | If the form is valid, user is redirected to the newly edited post.                                                                      | ✓    |
@@ -235,7 +268,7 @@ BILD
 
 - A bug related to categories in PostsPage.js - When entering the web application the "NoResults.png" was the first to show up. This was due to setHasLoaded was set to true. Here is the code with setHasLoaded commented out -
 
-```  //Fetch categories
+```//Fetch categories
   useEffect(() => {
     const fetchCategories = async () => {
       try {
