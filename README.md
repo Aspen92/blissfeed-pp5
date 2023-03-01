@@ -2,6 +2,8 @@
 
 Welcome to **BlissFeed**, the social media app designed to help you share your life and spread positivity to others. Whether you're looking to connect with friends, family, or like-minded individuals, **BlissFeed** offers a platform for you to create an account, post pictures and text, and engage with others in a fun and positive way. With full CRUD functionality, you can easily manage your content and connect with others on your terms.
 
+BILD
+
 The frontend application is connected to the **BlissFeed API**, a custom-built backend application built with Django REST framework and designed specifically for the **BlissFeed** application. You can find the repository for the API [here](https://github.com/Aspen92/blissfeed-drf-api).
 
 # Project Goals
@@ -31,8 +33,21 @@ The objective of this project was to construct a website application that facili
 # Design
 
 ## Color Scheme
+BILD
+
+- I used a dark charcoal grey color (#212121) for the background to create a sleek and modern look for the page.
+
+- I used a slightly lighter shade of grey (#323232) to define elements such as the navbar and other important sections of the page. This creates a clear contrast against the background.
+
+- To add a clear and special color, I used two shades of teal (#0D7377) and #14FFEC for buttons. These colors went well with the grey background and help to draw attention to the buttons.
+
+- For optimal readability, I used white for all text elements.
 
 ## Typography
+
+- The main font used is called [Roboto](https://fonts.google.com/specimen/Roboto) and is a popular and versatile sans-serif typeface designed by Christian Robertson and released by Google in 2011.
+
+- Sans-serif is used as a backup-font.
 
 ## Wireframes
 
