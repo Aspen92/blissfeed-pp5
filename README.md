@@ -51,17 +51,33 @@ BILD
 
 ## Wireframes
 
+Below are the wireframes originally sketched for both desktop and mobile versions of the page. The final version of the page closely resembled these mockups, with only a few elements being repositioned within the page.
+
+BILD
+
 # Frontend
 
 ## Developer Role
 
+The primary responsibility of frontend developers is to develop the side of web applications that the user interacts with. This involves ensuring that users stay engaged on the site, requires expertise in areas such as responsiveness, accessibility, performance, interactivity, and design. While working alongside UX/UI and backend teams, frontend developers also need to have a sound understanding of backend structure to integrate it effectively with the frontend application.
+
 ## React
 
-## React Bootstrap
+React is a JavaScript library for building user interfaces. It uses a declarative approach to create reusable components, making it easier to build and maintain large-scale applications. Developed by Facebook, it has a large community.
+
+## React-Bootstrap
+
+React-Bootstrap is a popular front-end UI library that provides pre-built components for building responsive and mobile-first web applications using React. It is built on top of Bootstrap, which is a widely-used CSS framework.
 
 # Agile
 
+On this project I used GitHub to create an Kanban agile project management tool to create EPICs and add User Stories. Each user story was labeled with a "must-have", "should-have" or "could-have tag, and all user stories were completed during the project.
+
 # Future Features Ideas / Improvements
+
+- Add a way for users to message eachother.
+- Add function for uploading videos.
+- Make a light version of the application and make users have the choice of choosing between light or dark mode.
 
 # API
 
