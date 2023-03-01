@@ -2,7 +2,7 @@
 
 Welcome to **BlissFeed**, the social media app designed to help you share your life and spread positivity to others. Whether you're looking to connect with friends, family, or like-minded individuals, **BlissFeed** offers a platform for you to create an account, post pictures and text, and engage with others in a fun and positive way. With full CRUD functionality, you can easily manage your content and connect with others on your terms.
 
-BILD
+![Responsive](https://user-images.githubusercontent.com/96183912/222031990-fc116004-6a7a-40cc-a38e-a53b7d4428e8.png)
 
 The frontend application is connected to the **BlissFeed API**, a custom-built backend application built with Django REST framework and designed specifically for the **BlissFeed** application. You can find the repository for the API [here](https://github.com/Aspen92/blissfeed-drf-api).
 
@@ -82,7 +82,9 @@ The objective of this project was to construct a website application that facili
 
 ## Color Scheme
 
-BILD
+![Color Palette #1](https://user-images.githubusercontent.com/96183912/222032048-b4e26704-5bd5-4dce-826a-c838823347fe.png)
+
+![Color Palette #2](https://user-images.githubusercontent.com/96183912/222032391-08c28cfc-3a8a-4314-a647-c7a312447793.png)
 
 - I used a dark charcoal grey color (#212121) for the background to create a sleek and modern look for the page.
 
@@ -102,7 +104,9 @@ BILD
 
 Below are the wireframes originally sketched for both desktop and mobile versions of the page. The final version of the page closely resembled these mockups, with only a few elements being repositioned within the page.
 
-BILD
+![Wireframes Home Page](https://user-images.githubusercontent.com/96183912/222032132-7755a6eb-c19c-4054-addc-e4734fd97b5d.png)
+
+![Wireframes Profile Page](https://user-images.githubusercontent.com/96183912/222032100-ddcd82cc-b5f5-4b43-bec7-70d5529d6723.png)
 
 # Frontend
 
@@ -122,7 +126,7 @@ React-Bootstrap is a popular front-end UI library that provides pre-built compon
 
 On this project I used GitHub to create an Kanban agile project management tool to create EPICs and add User Stories. Each user story was labeled with a "must-have", "should-have" or "could-have tag, and all user stories were completed during the project.
 
-BILD
+![User stories](https://user-images.githubusercontent.com/96183912/222032196-8859968f-cc6b-406f-82b0-417c57283790.png)
 
 # Future Features Ideas / Improvements
 
@@ -182,7 +186,7 @@ The W3C Markup Validator, W3C CSS Validator Services and ESLint were used to val
 
 ### Lighthouse
 
-BILD
+![Lighthouse](https://user-images.githubusercontent.com/96183912/222032318-7d440aae-612e-4508-ae73-395c05418d5c.png)
 
 ## Testing of implemented User Stories from User Experience (UX) section
 
